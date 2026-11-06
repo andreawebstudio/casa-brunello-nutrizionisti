@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa Brunello | Federico Bruno e Valentina Pisanò — Biologi Nutrizionisti Padova</title>
+<meta name="description" content="Casa Brunello: Federico Bruno e Valentina Pisanò, biologi nutrizionisti a Padova. Percorsi personalizzati, nutrizione clinica, femminile e sportiva.">
+<meta name="theme-color" content="#FFF9F1">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Casa Brunello">
+<meta property="og:title" content="Casa Brunello | Federico Bruno e Valentina Pisanò — Biologi Nutrizionisti Padova">
+<meta property="og:description" content="Biologi nutrizionisti a Padova. Percorsi personalizzati, nutrizione clinica, femminile e sportiva.">
+<meta property="og:image" content="img/hero-1920.webp">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero-1920.webp" imagesrcset="img/hero-960.webp 960w, img/hero-1920.webp 1920w" imagesizes="100vw">
+
+<style>
+:root{
+  --ivory:#FFF9F1;
+  --oat:#EFBC86;
+  --sage:#828D6D;
+  --forest:#304A3B;
+  --terracotta:#C98565;
+  --apricot:#E6AD58;
+  --white:#FFFFFF;
+  --line:rgba(48,74,59,.14);
+  --shadow:0 1px 2px rgba(48,74,59,.04), 0 10px 30px -18px rgba(48,74,59,.18);
+  --serif:"DM Serif Display", Georgia, "Times New Roman", serif;
+  --sans:"Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --radius:18px;
+  --header-h:76px;
+  --wrap:1180px;
+  --gutter:clamp(16px, 4vw, 40px);
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --section-bg:var(--ivory);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 8px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ivory);color:var(--forest);font-family:var(--sans);font-size:1.0625rem;line-height:1.7;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;margin:0;color:var(--forest);letter-spacing:.005em}
+p{margin:0 0 1.1em}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--forest);color:#fff;padding:10px 16px;border-radius:8px;z-index:200;text-decoration:none;font-weight:600}
+.skip:focus{left:12px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+:focus-visible{outline:3px solid var(--forest);outline-offset:3px;border-radius:6px}
+
+/* ---------- Sections & background rhythm: white → oat → ivory ---------- */
+section{padding:clamp(72px, 10vw, 124px) 0;background:var(--section-bg)}
+.bg-white{--section-bg:var(--white)}
+.bg-oat{--section-bg:var(--oat)}
+.bg-ivory{--section-bg:var(--ivory)}
+.head{text-align:center;max-width:780px;margin:0 auto clamp(40px, 6vw, 64px)}
+.eyebrow{display:block;font-family:var(--sans);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:.18em;color:var(--forest);margin-bottom:18px}
+.eyebrow::after{content:"";display:block;width:44px;height:1px;background:var(--sage);margin:14px auto 0}
+.head h2{font-size:clamp(1.85rem, 1.2rem + 2.6vw, 3rem);text-wrap:balance}
+.head .lead{margin:22px auto 0;font-size:1.125rem;color:rgba(48,74,59,.86);max-width:640px}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:14px 28px;border-radius:10px;font-family:var(--sans);font-weight:600;font-size:.88rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1.5px solid var(--sage);transition:background-color .3s var(--ease), color .3s var(--ease), filter .3s var(--ease), transform .3s var(--ease);cursor:pointer;text-align:center}
+.btn-primary{background:var(--sage);color:#fff}
+.btn-primary:hover{filter:brightness(.9)}
+.btn-secondary{background:transparent;color:var(--sage);font-weight:700}
+.btn-secondary:hover{background:rgba(130,141,109,.12)}
+.btn:active{transform:translateY(1px)}
+.cta-end{text-align:center;margin-top:clamp(40px, 6vw, 60px)}
+
+/* ---------- Header ---------- */
+.site-header{position:sticky;top:0;z-index:100;background:var(--ivory);border-bottom:1px solid var(--line)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:var(--header-h);max-width:1400px;padding:0 clamp(16px, 2.4vw, 40px)}
+.brand{text-decoration:none;display:flex;flex-direction:column;line-height:1;flex-shrink:0}
+.brand-name{font-family:var(--serif);font-size:1.6rem;letter-spacing:.01em;color:var(--forest)}
+.brand-sub{font-family:var(--sans);font-size:.64rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;margin-top:7px;color:var(--forest);opacity:.85}
+.nav{display:flex;align-items:center;gap:clamp(10px, 1.4vw, 22px);min-width:0}
+.nav ul{list-style:none;display:flex;flex-wrap:nowrap;gap:0;margin:0;padding:0}
+.nav a.link{display:block;text-decoration:none;font-size:clamp(.8rem, .55rem + .33vw, .9rem);font-weight:500;padding:8px clamp(5px, .55vw, 10px);border-radius:6px;white-space:nowrap;position:relative}
+.nav a.link::after{content:"";position:absolute;left:clamp(5px, .55vw, 10px);right:clamp(5px, .55vw, 10px);bottom:3px;height:1px;background:var(--sage);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.nav a.link:hover::after{transform:scaleX(1)}
+.nav .btn{min-height:44px;padding:11px clamp(12px, 1.2vw, 20px);font-size:clamp(.68rem, .5rem + .25vw, .76rem);letter-spacing:.08em;white-space:nowrap;flex-shrink:0}
+.burger{display:none;width:48px;height:48px;border:1px solid var(--line);background:var(--white);border-radius:10px;cursor:pointer;align-items:center;justify-content:center;color:var(--forest)}
+.burger span,.burger span::before,.burger span::after{display:block;width:20px;height:1.5px;background:currentColor;position:relative;transition:transform .3s var(--ease), background-color .2s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg)}
+
+/* Burger menu only on mobile / small tablets */
+@media (max-width:1023px){
+  .burger{display:inline-flex}
+  .nav{position:fixed;top:var(--header-h);left:0;right:0;bottom:0;background:var(--ivory);flex-direction:column;align-items:stretch;gap:0;padding:18px var(--gutter) 32px;overflow-y:auto;visibility:hidden;opacity:0;transform:translateY(-8px);transition:opacity .3s var(--ease), transform .3s var(--ease), visibility 0s linear .3s;border-top:1px solid var(--line)}
+  .nav.open{visibility:visible;opacity:1;transform:none;transition:opacity .3s var(--ease), transform .3s var(--ease)}
+  .nav ul{flex-direction:column}
+  .nav a.link{font-size:1.1rem;padding:14px 4px;border-bottom:1px solid var(--line);border-radius:0}
+  .nav a.link::after{display:none}
+  .nav .btn{margin-top:26px;min-height:52px;font-size:.85rem;padding:14px 20px}
+  body.menu-open{overflow:hidden}
+}
+@media (min-width:1024px) and (max-width:1180px){
+  .brand-name{font-size:1.35rem}
+  .brand-sub{font-size:.56rem;letter-spacing:.18em}
+}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;padding:0;min-height:calc(100svh - var(--header-h));display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--oat)}
+.hero picture,.hero picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:rgba(255,249,241,.86)}
+.hero-inner{position:relative;z-index:2;text-align:center;max-width:1100px;padding:clamp(56px, 9vh, 104px) var(--gutter);width:100%;margin:0 auto}
+.hero .eyebrow{margin-bottom:26px}
+.hero h1{font-size:clamp(2.2rem, 1rem + 4.2vw, 4.3rem);line-height:1.1;letter-spacing:0}
+.hero h1 .l1{display:block;color:var(--forest)}
+.hero h1 .l2{display:block;color:var(--terracotta);font-style:italic}
+@media (min-width:1024px){.hero h1 .l1,.hero h1 .l2{white-space:nowrap}}
+.hero p.sub{font-size:clamp(1.05rem, .98rem + .4vw, 1.25rem);max-width:660px;margin:30px auto 0;color:#000}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:40px}
+.hero .ornament{display:block;margin:0 auto 22px;width:56px;height:14px}
+
+/* ---------- Chi siamo ---------- */
+.about{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-areas:"head head" "photo text";column-gap:clamp(40px, 6vw, 88px);align-items:start}
+.about > .head{grid-area:head}
+.about > .portrait{grid-area:photo}
+.about > .about-text{grid-area:text}
+.portrait{position:sticky;top:calc(var(--header-h) + 40px);display:flex;justify-content:center}
+.portrait-frame{position:relative;width:min(100%, 440px);aspect-ratio:1}
+.portrait-frame svg{position:absolute;inset:-7%;width:114%;height:114%;z-index:0}
+.portrait-frame img{position:relative;z-index:1;width:100%;height:100%;border-radius:50%;object-fit:cover}
+.about-text{font-size:1.075rem}
+.about-text p{color:rgba(48,74,59,.92)}
+.about-text strong{font-weight:700;color:var(--forest)}
+.about-text .pull{font-family:var(--serif);font-size:clamp(1.35rem, 1.1rem + .9vw, 1.7rem);line-height:1.35;color:var(--forest);margin:34px 0;padding-left:22px;border-left:2px solid var(--sage)}
+.profiles{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
+.profile{border-top:1px solid var(--sage);padding-top:20px}
+.profile .role{display:block;font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin-bottom:6px}
+.profile h3{font-size:1.45rem;margin-bottom:10px}
+.profile p{font-size:.98rem;margin:0}
+
+/* ---------- A chi ci rivolgiamo ---------- */
+.targets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px, 2.4vw, 30px);max-width:900px;margin:0 auto}
+.target{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(22px, 2.4vw, 30px) clamp(22px, 2.6vw, 34px);text-align:center;display:flex;flex-direction:column;align-items:center;transition:transform .4s var(--ease), box-shadow .4s var(--ease)}
+.target:hover{transform:translateY(-3px);box-shadow:0 1px 2px rgba(48,74,59,.05), 0 20px 40px -24px rgba(48,74,59,.28)}
+.icon{width:58px;height:58px;border-radius:50%;background:var(--ivory);border:1px solid rgba(130,141,109,.6);display:grid;place-items:center;margin-bottom:16px;position:relative}
+.icon::after{content:"";position:absolute;top:3px;right:3px;width:7px;height:7px;border-radius:50%;background:var(--apricot)}
+.icon svg{width:28px;height:28px}
+.target h3{font-size:clamp(1.2rem, 1.08rem + .4vw, 1.4rem);margin-bottom:10px}
+.target p{font-size:.94rem;line-height:1.6;color:rgba(48,74,59,.9);margin:0 0 .8em}
+.target p:last-child{margin-bottom:0}
+.target .small{font-size:.86rem;font-style:italic;color:rgba(48,74,59,.82)}
+
+/* ---------- Approccio: orbit layout ---------- */
+.approach-intro{max-width:700px;margin:0 auto clamp(48px, 6vw, 80px);text-align:center;font-size:1.125rem}
+.approach-intro p{color:rgba(48,74,59,.9)}
+.orbit{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,340px) minmax(0,1fr);grid-template-rows:auto auto;column-gap:clamp(36px, 5vw, 72px);row-gap:clamp(48px, 6vw, 88px);align-items:center;max-width:1120px;margin:0 auto}
+.orbit-center{grid-column:2;grid-row:1 / span 2;position:relative;aspect-ratio:1;display:grid;place-items:center;text-align:center}
+.orbit-center svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.orbit-center .ring{transform-origin:50% 50%;animation:spin 80s linear infinite}
+.orbit-center .core{position:relative;z-index:1;padding:0 18%}
+.orbit-center .core small{display:block;font-weight:600;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px}
+.orbit-center .core strong{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem, 1.3rem + 1.4vw, 2.5rem);line-height:1.1}
+.orbit-center .core em{font-family:var(--serif);font-style:italic;color:var(--forest)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.orbit-list{display:contents;list-style:none;margin:0;padding:0}
+.o-item{position:relative;max-width:360px}
+.o-item.left{grid-column:1;justify-self:end;text-align:right}
+.o-item.right{grid-column:3;justify-self:start;text-align:left}
+.o-item.top{grid-row:1}.o-item.bottom{grid-row:2}
+.o-item::before{content:"";position:absolute;top:22px;width:clamp(28px, 4vw, 60px);height:1px;background:var(--sage)}
+.o-item.left::before{right:calc(-1 * clamp(36px, 5vw, 72px))}
+.o-item.right::before{left:calc(-1 * clamp(36px, 5vw, 72px))}
+.o-item .leaf{display:inline-block;width:22px;height:22px;vertical-align:middle}
+.o-item h3{font-size:clamp(1.5rem, 1.2rem + .9vw, 2rem);margin:0 0 12px;display:flex;align-items:center;gap:12px}
+.o-item.left h3{justify-content:flex-end}
+.o-item p{margin:0;color:rgba(48,74,59,.9);font-size:1.02rem}
+
+/* ---------- Servizi ---------- */
+.services{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px, 1.6vw, 22px);max-width:1060px;margin:0 auto}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;height:100%;transition:transform .4s var(--ease), box-shadow .4s var(--ease)}
+.card:hover{transform:translateY(-3px);box-shadow:0 1px 2px rgba(48,74,59,.05), 0 20px 40px -24px rgba(48,74,59,.28)}
+.card figure{margin:0;aspect-ratio:16/10;overflow:hidden;background:var(--oat)}
+.card figure img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.card:hover figure img{transform:scale(1.03)}
+.card-body{padding:18px 20px 22px;flex:1}
+.card .kicker{display:block;font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.card h3{font-size:1.14rem;line-height:1.2;margin-bottom:8px}
+.card p{font-size:.9rem;line-height:1.6;color:rgba(48,74,59,.9);margin:0}
+
+/* ---------- Come funziona: animated path ---------- */
+.steps-list{display:contents;list-style:none;margin:0;padding:0}
+.steps{margin:0 auto;padding:0;max-width:1120px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(20px, 3vw, 40px);position:relative;--p:0}
+.steps .track,.steps .fill{position:absolute;top:34px;left:12.5%;right:12.5%;height:1px;background:rgba(130,141,109,.45)}
+.steps .fill{background:var(--sage);transform-origin:left;transform:scaleX(var(--p));transition:transform .15s linear}
+.steps .spark{position:absolute;top:34px;left:calc(12.5% + 75% * var(--p));width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--apricot);box-shadow:0 0 0 6px rgba(230,173,88,.18), 0 0 22px 6px rgba(230,173,88,.35);opacity:calc(var(--p) * 8);transition:left .15s linear}
+.step{text-align:center;position:relative;opacity:.45;transform:translateY(10px);transition:opacity .45s var(--ease), transform .45s var(--ease)}
+.step.on{opacity:1;transform:none}
+.step-num{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;width:68px;height:68px;border-radius:50%;background:var(--section-bg);border:1px solid var(--sage);font-family:var(--serif);font-size:1.5rem;color:var(--forest);margin-bottom:24px;transition:background-color .45s var(--ease), color .45s var(--ease), border-color .45s var(--ease)}
+.step-num::after{content:"";position:absolute;inset:-1px;border-radius:50%;border:1px solid var(--sage);opacity:0}
+.step.on .step-num{background:var(--sage);color:#fff;border-color:var(--sage)}
+.step.on .step-num::after{animation:ripple 1.2s var(--ease) 1}
+@keyframes ripple{0%{opacity:.6;transform:scale(1)}100%{opacity:0;transform:scale(1.6)}}
+.step h3{font-size:1.4rem;margin-bottom:12px}
+.step p{margin:0 auto;max-width:260px;color:rgba(48,74,59,.9);font-size:1rem}
+
+/* ---------- Citazione ---------- */
+.quote{padding:clamp(72px, 9vw, 112px) 0;position:relative;overflow:hidden}
+.quote figure{margin:0 auto;max-width:900px;text-align:center;position:relative}
+.quote .mark{display:block;font-family:var(--serif);font-size:7rem;line-height:.6;color:var(--terracotta);height:56px;margin-bottom:12px}
+.quote blockquote{margin:0}
+.quote blockquote p{font-family:var(--serif);font-size:clamp(1.55rem, 1.05rem + 2vw, 2.6rem);line-height:1.3;color:var(--forest);margin:0}
+.quote blockquote em{font-style:italic;color:var(--forest)}
+.quote figcaption{margin-top:32px;font-weight:600;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase}
+.quote figcaption::before{content:"";display:block;width:44px;height:1px;background:var(--sage);margin:0 auto 18px}
+.quote .blob{position:absolute;z-index:0;pointer-events:none}
+.quote .blob.a{width:340px;left:-120px;top:-80px}
+.quote .blob.b{width:260px;right:-90px;bottom:-90px}
+.quote .wrap{position:relative;z-index:1}
+
+/* ---------- Dove riceviamo ---------- */
+.address{max-width:340px;margin:0 auto;text-align:center;background:var(--section-bg);border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;box-shadow:var(--shadow)}
+.bg-white .address{background:var(--ivory)}
+.address svg{width:30px;height:30px;margin:0 auto 12px}
+.address .label{display:block;font-size:.74rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px}
+.address .value{font-family:var(--serif);font-size:1.7rem;line-height:1.2}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:840px;margin:0 auto;border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item h3{margin:0;font-family:var(--sans)}
+.faq-btn{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 4px;cursor:pointer;font-family:var(--sans);font-weight:600;font-size:1.08rem;color:var(--forest);line-height:1.45}
+.faq-btn:focus-visible{outline:3px solid var(--forest);outline-offset:2px;border-radius:6px}
+.faq-icon{flex-shrink:0;width:34px;height:34px;border-radius:50%;border:1px solid var(--sage);position:relative;transition:background-color .35s var(--ease)}
+.faq-icon::before,.faq-icon::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--forest);transform:translate(-50%,-50%)}
+.faq-icon::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .35s var(--ease)}
+.faq-btn[aria-expanded="true"] .faq-icon{background:var(--sage)}
+.faq-btn[aria-expanded="true"] .faq-icon::after{transform:translate(-50%,-50%) rotate(0deg)}
+.faq-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--ease)}
+.faq-panel > div{overflow:hidden}
+.faq-panel p{margin:0;padding:0 60px 26px 4px;color:rgba(48,74,59,.9)}
+.faq-item.open .faq-panel{grid-template-rows:1fr}
+
+/* ---------- Contatti: form ---------- */
+.form-card{max-width:640px;margin:0 auto;background:var(--white);border:1px solid var(--line);border-radius:calc(var(--radius) + 4px);box-shadow:var(--shadow);padding:clamp(24px, 4vw, 40px)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field.full{grid-column:1 / -1}
+.field label{font-size:.86rem;font-weight:600}
+.field label .opt{font-weight:400;opacity:.8}
+.field input,.field select,.field textarea{font:inherit;font-size:1rem;color:var(--forest);background:var(--ivory);border:1px solid rgba(48,74,59,.28);border-radius:10px;padding:11px 14px;min-height:46px;width:100%;transition:border-color .25s var(--ease), box-shadow .25s var(--ease)}
+.field textarea{resize:vertical;min-height:96px;line-height:1.5}
+.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23304A3B' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--sage);box-shadow:0 0 0 3px rgba(130,141,109,.45)}
+.field .hint{font-size:.8rem;opacity:.85}
+.consent{grid-column:1 / -1;display:flex;gap:12px;align-items:flex-start;font-size:.9rem;line-height:1.5;margin-top:4px}
+.consent input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--sage);flex-shrink:0}
+.form-actions{grid-column:1 / -1;text-align:center;margin-top:8px}
+.form-actions .btn{width:100%;max-width:340px}
+.form-status{grid-column:1 / -1;text-align:center;font-size:.95rem;margin:4px 0 0;min-height:1.5em}
+
+/* ---------- Footer ---------- */
+.site-footer{background:var(--forest);color:#fff;padding:clamp(64px, 8vw, 96px) 0 32px}
+.site-footer a{color:#fff}
+.footer-top{text-align:center;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.16)}
+.footer-top .brand-name{color:#fff;font-size:2.2rem}
+.footer-top .brand-sub{color:#fff;opacity:.85;display:block;margin-top:10px}
+.footer-top .motto{font-family:var(--serif);font-size:clamp(1.25rem, 1rem + 1vw, 1.65rem);margin:28px 0 0;color:#fff}
+.footer-top .motto::before{content:"";display:block;width:44px;height:1px;background:var(--sage);margin:0 auto 26px}
+.footer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;padding:48px 0 44px}
+.footer-grid h2{font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px;color:#fff;opacity:.85}
+.footer-grid ul{list-style:none;margin:0;padding:0}
+.footer-grid li{margin-bottom:8px;font-size:.96rem}
+.footer-grid a{text-decoration:none;display:inline-block;padding:2px 0}
+.footer-grid a:hover{text-decoration:underline;text-underline-offset:4px}
+.footer-grid .pro p{font-size:.94rem;margin:0 0 18px;line-height:1.6;color:rgba(255,255,255,.9)}
+.footer-grid .pro strong{color:#fff}
+.links-cols{columns:2;column-gap:24px}
+.site-footer :focus-visible{outline-color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.16);padding-top:26px;text-align:center;font-size:.86rem;color:rgba(255,255,255,.8)}
+
+/* ---------- Reveal ---------- */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .45s var(--ease), transform .45s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.no-js .reveal{opacity:1;transform:none}
+.no-js .step{opacity:1;transform:none}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1099px){
+  .services{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:960px){
+  .orbit{grid-template-columns:1fr;grid-template-rows:none;row-gap:0;max-width:520px}
+  .orbit-center{grid-column:1;grid-row:auto;width:min(80%, 300px);justify-self:center;margin-bottom:28px}
+  .o-item,.o-item.left,.o-item.right{grid-column:1;grid-row:auto;justify-self:center;text-align:center;max-width:none;padding:28px 0;border-top:1px solid var(--line)}
+  .o-item::before{display:none}
+  .o-item h3,.o-item.left h3{justify-content:center}
+  .o-item.left .leaf{order:-1}
+}
+@media (max-width:900px){
+  .about{grid-template-columns:1fr;grid-template-areas:"photo" "head" "text"}
+  .portrait{position:static;margin-bottom:36px}
+  .portrait-frame{width:min(78%, 340px)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-grid .links{grid-column:1 / -1}
+  .steps{grid-template-columns:1fr;max-width:440px;gap:0}
+  .steps .track,.steps .fill{top:34px;bottom:34px;left:34px;right:auto;width:1px;height:auto}
+  .steps .fill{transform-origin:top;transform:scaleY(var(--p))}
+  .steps .spark{left:34px;top:calc(34px + (100% - 68px) * var(--p));transition:top .15s linear}
+  .step{text-align:left;display:grid;grid-template-columns:68px 1fr;column-gap:22px;padding-bottom:40px}
+  .step:last-of-type{padding-bottom:0}
+  .step-num{grid-row:1 / span 2;margin:0}
+  .step h3{align-self:end;margin-top:8px}
+  .step p{margin:0;max-width:none}
+}
+@media (max-width:760px){
+  .targets{grid-template-columns:1fr;grid-auto-rows:auto}
+  .profiles{grid-template-columns:1fr}
+  .faq-panel p{padding-right:8px}
+  .footer-grid{grid-template-columns:1fr;text-align:center;gap:32px}
+  .links-cols{columns:1}
+  .form-grid{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  .services{grid-template-columns:1fr;max-width:440px;margin:0 auto}
+}
+@media (max-width:480px){
+  :root{--header-h:68px}
+  .brand-name{font-size:1.38rem}
+  .brand-sub{font-size:.6rem;letter-spacing:.18em}
+  .hero .eyebrow{letter-spacing:.12em;font-size:.72rem}
+  .hero-ctas{flex-direction:column;align-items:stretch;max-width:340px;margin-left:auto;margin-right:auto}
+  .btn{padding:14px 18px;font-size:.8rem;letter-spacing:.08em}
+  .about-text .pull{padding-left:16px}
+  .faq-btn{font-size:1rem}
+  .quote .mark{font-size:5.5rem;height:44px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.01ms !important;animation:none !important}
+  .reveal,.step{opacity:1;transform:none}
+  .card:hover,.target:hover{transform:none}
+}
+</style>
+</head>
+<body class="no-js">
+<a class="skip" href="#main">Vai al contenuto</a>
+
+<!-- 01 HEADER -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="Casa Brunello — torna all'inizio">
+      <span class="brand-name">Casa Brunello</span>
+      <span class="brand-sub">Federico &amp; Valentina</span>
+    </a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Apri il menu"><span></span></button>
+    <nav class="nav" id="nav" aria-label="Navigazione principale">
+      <ul>
+        <li><a class="link" href="#chi-siamo">Chi siamo</a></li>
+        <li><a class="link" href="#a-chi-ci-rivolgiamo">A chi ci rivolgiamo</a></li>
+        <li><a class="link" href="#approccio">Approccio</a></li>
+        <li><a class="link" href="#servizi">Servizi</a></li>
+        <li><a class="link" href="#come-funziona">Come funziona</a></li>
+        <li><a class="link" href="#dove-riceviamo">Dove riceviamo</a></li>
+        <li><a class="link" href="#faq">FAQ</a></li>
+        <li><a class="link" href="#contatti">Contatti</a></li>
+      </ul>
+      <a class="btn btn-primary" href="#contatti">Prenota una consulenza</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- 02 HERO -->
+<section class="hero" id="home" aria-labelledby="hero-title">
+  <picture>
+    <source type="image/webp" srcset="img/hero-960.webp 960w, img/hero-1920.webp 1920w" sizes="100vw">
+    <img src="img/hero-1920.webp" alt="" width="1920" height="1100" fetchpriority="high">
+  </picture>
+  <div class="hero-inner">
+    <svg class="ornament" viewBox="0 0 56 14" aria-hidden="true"><path d="M2 7 C 14 -1, 22 15, 28 7 S 42 -1, 54 7" fill="none" stroke="#828D6D" stroke-width="1.4" stroke-linecap="round"/><circle cx="28" cy="7" r="2.4" fill="#E6AD58"/></svg>
+    <span class="eyebrow">Casa Brunello · Federico &amp; Valentina</span>
+    <h1 id="hero-title"><span class="l1">Mangiare bene, vivere meglio</span> <span class="l2">con il sorriso.</span></h1>
+    <p class="sub">Con noi non troverai mai restrizioni inutili ma una guida paziente e comprensiva per costruire il tuo equilibrio e sentirti in forma.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#contatti">Prenota una consulenza</a>
+      <a class="btn btn-secondary" href="#servizi">Scopri i nostri servizi</a>
+    </div>
+  </div>
+</section>
+
+<!-- 03 CHI SIAMO (bianco) -->
+<section class="bg-white" id="chi-siamo" aria-labelledby="chi-title">
+  <div class="wrap about">
+    <div class="portrait reveal">
+      <div class="portrait-frame">
+        <svg viewBox="0 0 200 200" aria-hidden="true"><path fill="#EFBC86" fill-opacity=".38" d="M100 6c30 0 58 13 76 36s26 54 18 82-30 52-58 64-62 10-88-6S6 136 6 104 18 44 40 26 70 6 100 6Z"/><circle cx="176" cy="36" r="5" fill="#E6AD58"/><path d="M14 150c14 26 40 42 70 44" fill="none" stroke="#828D6D" stroke-width="1.2" stroke-linecap="round"/></svg>
+        <img src="img/federico-valentina-560.png" srcset="img/federico-valentina-560.png 560w, img/federico-valentina.png 800w" sizes="(max-width:900px) 340px, 440px" width="560" height="560" loading="lazy" decoding="async" alt="Federico Bruno e Valentina Pisanò, biologi nutrizionisti, sorridenti in camice bianco">
+      </div>
+    </div>
+    <div class="head reveal">
+      <span class="eyebrow">Chi siamo</span>
+      <h2 id="chi-title">Due storie, una passione condivisa.</h2>
+    </div>
+    <div class="about-text reveal">
+      <p>Siamo <strong>Federico Bruno e Valentina Pisanò</strong>, biologi nutrizionisti e compagni di vita, uniti dalla passione per la cucina e la sana alimentazione.</p>
+      <p>La nostra storia è iniziata tra i banchi di <strong>Scienze della Nutrizione Umana</strong>, dove abbiamo scoperto di condividere non soltanto un interesse professionale, ma anche una visione comune del benessere.</p>
+      <p>Prima di incontrarci venivamo da percorsi differenti: da una parte il mondo della biologia, della cucina professionale e della sicurezza alimentare; dall'altra la farmacia, a cui è seguito l'approfondimento della nutrizione clinica, femminile e sportiva.</p>
+      <p>La curiosità e il desiderio di crescere ci hanno portati nella stessa direzione. Da allora condividiamo studio, aggiornamento professionale, progetti e anche tante <strong>videoricette</strong>, tra preparazioni, esperimenti e momenti divertenti.</p>
+      <p class="pull">Per noi il cibo è molto più di un insieme di nutrienti: è convivialità, memoria, piacere e benessere.</p>
+      <p>Crediamo in un'alimentazione capace di adattarsi alla vita delle persone, senza trasformarsi in una serie di regole rigide o rinunce inutili. Il nostro obiettivo è accompagnarti nella costruzione di <strong>abitudini alimentari equilibrate, sostenibili e compatibili con la tua quotidianità</strong>.</p>
+      <p>Perché, per noi, prendersi cura di sé dovrebbe essere un gesto di attenzione, non una punizione.</p>
+
+      <div class="profiles">
+        <div class="profile">
+          <span class="role">Biologo nutrizionista</span>
+          <h3>Federico Bruno</h3>
+          <p>Sono un Biologo nutrizionista specializzato in <strong>disturbi gastrointestinali</strong>, con esperienza in cucina e sicurezza alimentare. Offro consigli pratici per una dieta equilibrata, sicura e adatta alle esigenze di ognuno, unendo competenze scientifiche e culinarie.</p>
+        </div>
+        <div class="profile">
+          <span class="role">Biologa nutrizionista · Farmacista</span>
+          <h3>Valentina Pisanò</h3>
+          <p>Sono una Biologa nutrizionista e Farmacista, mi occupo di <strong>menopausa, nutrizione sportiva e percorsi nutrizionali per adolescenti</strong>. Seguo atleti amatori e agonisti, adolescenti e adulti, con percorsi orientati alla performance. Mi occupo di nutrizione clinica ed educazione alimentare.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 A CHI CI RIVOLGIAMO (oat) -->
+<section class="bg-oat" id="a-chi-ci-rivolgiamo" aria-labelledby="target-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">A chi ci rivolgiamo</span>
+      <h2 id="target-title">Ogni persona ha il suo equilibrio.</h2>
+      <p class="lead">Non esiste un unico modo di mangiare bene. Ogni percorso nasce dall'ascolto delle esigenze individuali e dalla ricerca di abitudini sostenibili.</p>
+    </div>
+    <div class="targets">
+      <article class="target reveal">
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="#304A3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 35V19"/><path d="M20 22c0-6 4-10 11-10 0 7-4 11-11 10Z" fill="#828D6D" fill-opacity=".35"/><path d="M20 19c0-5-3.5-8.5-10-8.5 0 6 3.5 9 10 8.5Z"/><path d="M13 35h14"/></svg></span>
+        <h3>Adolescenti</h3>
+        <p>Percorsi alimentari pensati per accompagnare i ragazzi in una fase di crescita importante, con un'attenzione particolare all'educazione alimentare e alla costruzione di abitudini sane, serene e consapevoli.</p>
+      </article>
+      <article class="target reveal">
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="#304A3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="22" r="12"/><path d="M20 22l5-5"/><path d="M17 6h6M20 6v4"/><path d="M30.5 11.5l2-2"/><path d="M20 13a9 9 0 0 1 9 9" stroke="#828D6D" stroke-width="2"/></svg></span>
+        <h3>Sportivi amatoriali e agonisti</h3>
+        <p>Percorsi alimentari per migliorare la prestazione sportiva in adulti e ragazzi che praticano sport a livello amatoriale e agonistico.</p>
+        <p class="small">Gli atleti agonisti sono seguiti dalla Dott.ssa Valentina Pisanò; il Dott. Federico Bruno segue gli sportivi a livello amatoriale.</p>
+      </article>
+      <article class="target reveal">
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="#304A3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 33c-6-4-9-8.5-9-13 0-3 2-5.5 5-5.5 1.8 0 3.2.9 4 2.3.8-1.4 2.2-2.3 4-2.3 3 0 5 2.5 5 5.5 0 4.5-3 9-9 13Z" fill="#828D6D" fill-opacity=".35"/><path d="M20 14.5c0-4 2-7 5-8.5"/><path d="M20 10c-2-2-5-2.5-7-1.5 1 2.5 4 3.5 7 1.5Z"/></svg></span>
+        <h3>Donne in ogni fase della vita</h3>
+        <p>Nutrizione al femminile con percorsi dedicati a gravidanza, allattamento, PCOS e menopausa, per sostenere con equilibrio e attenzione i cambiamenti di ogni fase.</p>
+      </article>
+      <article class="target reveal">
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="#304A3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 5l12 4.5v9c0 8-5.2 13.6-12 16.5C13.2 32.1 8 26.5 8 18.5v-9L20 5Z"/><path d="M20 27v-8" /><path d="M20 21c0-4.5 3-7 7.5-7 0 4.8-3 7.3-7.5 7Z" fill="#828D6D" fill-opacity=".35"/><path d="M20 23c0-3.5-2.5-5.5-6-5.5 0 3.7 2.5 5.7 6 5.5Z"/></svg></span>
+        <h3>Persone con condizioni di salute specifiche</h3>
+        <p>Percorsi nutrizionali in presenza di condizioni o patologie diagnosticate dal medico: problematiche metaboliche come obesità, diabete di tipo 2, insulino-resistenza, dislipidemie, ipertensione, steatosi epatica e iperuricemia; problematiche gastroenterologiche come sindrome dell'intestino irritabile (IBS), SIBO, reflusso gastroesofageo, gastrite, diverticolosi e diverticolite, celiachia e MICI, in fase acuta e di remissione; allergie e intolleranze alimentari.</p>
+        <p class="small">Sempre in affiancamento al percorso medico, mai in sostituzione.</p>
+      </article>
+    </div>
+    <div class="cta-end reveal"><a class="btn btn-primary" href="#contatti">Richiedi una consulenza</a></div>
+  </div>
+</section>
+
+<!-- 05 IL NOSTRO APPROCCIO (ivory) -->
+<section class="bg-ivory" id="approccio" aria-labelledby="approccio-title">
+  <div class="wrap">
+    <div class="head reveal" style="margin-bottom:28px">
+      <span class="eyebrow">Il nostro approccio</span>
+      <h2 id="approccio-title">Il benessere si costruisce, un passo alla volta.</h2>
+    </div>
+    <div class="approach-intro reveal">
+      <p>Crediamo che un percorso nutrizionale efficace debba essere costruito sulla persona, sulle sue abitudini e sulle sue esigenze. Per questo uniamo competenza scientifica, ascolto e attenzione alla quotidianità, senza dimenticare il piacere del cibo.</p>
+    </div>
+    <div class="orbit">
+      <div class="orbit-center reveal" aria-hidden="true">
+        <svg viewBox="0 0 300 300">
+          <path fill="#EFBC86" fill-opacity=".38" d="M150 22c38 0 76 16 98 46s28 72 14 108-46 66-86 78-86 6-118-20S12 166 18 128s28-72 58-90 46-16 74-16Z"/>
+          <g class="ring"><circle cx="150" cy="150" r="140" fill="none" stroke="#828D6D" stroke-width="1" stroke-dasharray="2 9" stroke-linecap="round"/><circle cx="150" cy="10" r="5" fill="#E6AD58"/><circle cx="290" cy="150" r="3.5" fill="#828D6D"/><circle cx="10" cy="150" r="3.5" fill="#828D6D"/></g>
+        </svg>
+        <div class="core"><small>Al centro</small><strong>ci sei <em>tu</em></strong></div>
+      </div>
+      <ul class="orbit-list">
+        <li class="o-item left top reveal"><h3>Personalizzazione <svg class="leaf" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 18C4 9 9 4 18 4c0 9-5 14-14 14Z" fill="#828D6D"/><path d="M4 18L13 9" stroke="#304A3B" stroke-width="1.2" stroke-linecap="round"/></svg></h3><p>Ogni percorso nasce dalla valutazione delle esigenze individuali, degli obiettivi e delle abitudini alimentari.</p></li>
+        <li class="o-item left bottom reveal"><h3>Ascolto <svg class="leaf" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 18C4 9 9 4 18 4c0 9-5 14-14 14Z" fill="#828D6D"/><path d="M4 18L13 9" stroke="#304A3B" stroke-width="1.2" stroke-linecap="round"/></svg></h3><p>Dedichiamo attenzione alla tua storia e alle tue difficoltà, per costruire un rapporto professionale fondato sulla comprensione.</p></li>
+        <li class="o-item right top reveal"><h3><svg class="leaf" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 18C4 9 9 4 18 4c0 9-5 14-14 14Z" fill="#828D6D"/><path d="M4 18L13 9" stroke="#304A3B" stroke-width="1.2" stroke-linecap="round"/></svg> Equilibrio e convivialità</h3><p>Promuoviamo un'alimentazione sostenibile, senza restrizioni inutili o regole punitive: il cibo è anche piacere, memoria e condivisione.</p></li>
+        <li class="o-item right bottom reveal"><h3><svg class="leaf" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 18C4 9 9 4 18 4c0 9-5 14-14 14Z" fill="#828D6D"/><path d="M4 18L13 9" stroke="#304A3B" stroke-width="1.2" stroke-linecap="round"/></svg> Continuità</h3><p>Ti accompagniamo con valutazioni periodiche ed educazione alimentare, per costruire abitudini applicabili alla vita di tutti i giorni.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 06 I SERVIZI (bianco) -->
+<section class="bg-white" id="servizi" aria-labelledby="servizi-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">I servizi</span>
+      <h2 id="servizi-title">Percorsi nutrizionali costruiti su di te.</h2>
+      <p class="lead">Consulenze nutrizionali a forfait e percorsi nutrizionali.</p>
+    </div>
+    <div class="services">
+      <article class="card reveal">
+        <figure><img src="img/servizio-prima-visita.webp" width="720" height="480" loading="lazy" decoding="async" alt="Scrivania di uno studio nutrizionale con un piano alimentare settimanale in compilazione, frutta fresca e calcolatrice"></figure>
+        <div class="card-body">
+          <span class="kicker">Prima visita</span>
+          <h3>Il punto di partenza del tuo percorso.</h3>
+          <p>Valutiamo stato nutrizionale, abitudini e obiettivi per elaborare un piano alimentare personalizzato e compatibile con la tua quotidianità.</p>
+        </div>
+      </article>
+      <article class="card reveal">
+        <figure><img src="img/servizio-valutazione.webp" width="720" height="480" loading="lazy" decoding="async" alt="Cucina domestica luminosa con un tablet che mostra una ricetta e lime freschi"></figure>
+        <div class="card-body">
+          <span class="kicker">Valutazione periodica</span>
+          <h3>Seguire i progressi, adattare il percorso.</h3>
+          <p>Incontri di controllo per rivalutare lo stato nutrizionale e adattare le indicazioni alimentari alle tue esigenze nel tempo.</p>
+        </div>
+      </article>
+      <article class="card reveal">
+        <figure><img src="img/servizio-bia.webp" width="720" height="480" loading="lazy" decoding="async" alt="Piedi appoggiati sugli elettrodi di una pedana per l'analisi della composizione corporea"></figure>
+        <div class="card-body">
+          <span class="kicker">Bioimpedenziometria</span>
+          <h3>Conoscere meglio la composizione corporea.</h3>
+          <p>Un esame non invasivo che stima massa magra, massa grassa e acqua corporea, utile per personalizzare il piano e monitorare il percorso.</p>
+        </div>
+      </article>
+      <article class="card reveal">
+        <figure><img src="img/servizio-haccp.webp" width="720" height="480" loading="lazy" decoding="async" alt="Vaschette di verdure, legumi e ortaggi freschi in un banco di ristorazione collettiva"></figure>
+        <div class="card-body">
+          <span class="kicker">Per aziende e ristorazione</span>
+          <h3>Consulenza HACCP e menù per la collettività.</h3>
+          <p>Il Dott. Federico Bruno offre consulenza HACCP e redazione di menù per la ristorazione collettiva: mense scolastiche, RSA e mense aziendali.</p>
+        </div>
+      </article>
+    </div>
+    <div class="cta-end reveal"><a class="btn btn-primary" href="#contatti">Prenota una consulenza</a></div>
+  </div>
+</section>
+
+<!-- 07 COME FUNZIONA (oat) -->
+<section class="bg-oat" id="come-funziona" aria-labelledby="come-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Come funziona</span>
+      <h2 id="come-title">Il tuo percorso inizia dall'ascolto.</h2>
+    </div>
+    <div class="steps" id="steps">
+      <span class="track" aria-hidden="true"></span>
+      <span class="fill" aria-hidden="true"></span>
+      <span class="spark" aria-hidden="true"></span>
+      <ol class="steps-list">
+      <li class="step"><span class="step-num" aria-hidden="true">01</span><h3>Il primo contatto</h3><p>Ci scrivi attraverso il modulo di contatto per raccontarci le tue esigenze e ricevere informazioni sulle disponibilità.</p></li>
+      <li class="step"><span class="step-num" aria-hidden="true">02</span><h3>La prima visita</h3><p>Valutiamo insieme lo stato nutrizionale, le abitudini alimentari e gli obiettivi individuali.</p></li>
+      <li class="step"><span class="step-num" aria-hidden="true">03</span><h3>Il piano personalizzato</h3><p>Elaboriamo indicazioni alimentari costruite sulle tue esigenze e sulla tua quotidianità.</p></li>
+      <li class="step"><span class="step-num" aria-hidden="true">04</span><h3>Il monitoraggio</h3><p>Con valutazioni periodiche seguiamo l'andamento del percorso e apportiamo gli adattamenti necessari.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 07b CITAZIONE (ivory) -->
+<section class="bg-ivory quote" aria-label="La nostra filosofia">
+  <svg class="blob a" viewBox="0 0 200 200" aria-hidden="true"><path fill="#EFBC86" fill-opacity=".38" d="M100 10c36 0 72 20 84 54s-2 74-30 96-70 34-104 16S2 118 12 82 64 10 100 10Z"/></svg>
+  <svg class="blob b" viewBox="0 0 200 200" aria-hidden="true"><path fill="none" stroke="#828D6D" stroke-width="1.2" d="M100 10c36 0 72 20 84 54s-2 74-30 96-70 34-104 16S2 118 12 82 64 10 100 10Z"/></svg>
+  <div class="wrap">
+    <figure class="reveal">
+      <span class="mark" aria-hidden="true">“</span>
+      <blockquote><p>Ti aspettiamo in studio per raggiungere i tuoi obiettivi insieme, un passo alla volta, con un metodo fatto su misura <em>per te, per le tue abitudini e per la tua serenità.</em></p></blockquote>
+      <figcaption>Federico &amp; Valentina</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 08 DOVE RICEVIAMO (bianco) -->
+<section class="bg-white" id="dove-riceviamo" aria-labelledby="dove-title">
+  <div class="wrap">
+    <div class="head reveal" style="margin-bottom:36px">
+      <span class="eyebrow">Dove riceviamo</span>
+      <h2 id="dove-title">Ti accompagniamo verso il tuo equilibrio.</h2>
+    </div>
+    <div class="address reveal">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#304A3B" stroke-width="1.4"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5" fill="#828D6D" stroke="none"/></svg>
+      <span class="label">Indirizzo</span>
+      <span class="value">In arrivo</span>
+    </div>
+  </div>
+</section>
+
+<!-- 09 FAQ (oat) -->
+<section class="bg-oat" id="faq" aria-labelledby="faq-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2 id="faq-title">Le risposte alle domande più frequenti.</h2>
+    </div>
+    <div class="faq reveal">
+      <div class="faq-item"><h3><button class="faq-btn" type="button" aria-expanded="false" aria-controls="faq-1" id="faq-q1">Come si svolge la prima consulenza?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+        <div class="faq-panel" id="faq-1" role="region" aria-labelledby="faq-q1"><div><p>Durante la prima consulenza valutiamo il tuo stato nutrizionale, le tue abitudini alimentari e le tue esigenze individuali, ed elaboriamo per te un piano alimentare personalizzato.</p></div></div></div>
+      <div class="faq-item"><h3><button class="faq-btn" type="button" aria-expanded="false" aria-controls="faq-2" id="faq-q2">Il percorso prevede controlli periodici?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+        <div class="faq-panel" id="faq-2" role="region" aria-labelledby="faq-q2"><div><p>Sì, prevediamo valutazioni periodiche dello stato nutrizionale per monitorare il percorso e adattarlo insieme a te quando necessario.</p></div></div></div>
+      <div class="faq-item"><h3><button class="faq-btn" type="button" aria-expanded="false" aria-controls="faq-3" id="faq-q3">Seguite anche persone con patologie?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+        <div class="faq-panel" id="faq-3" role="region" aria-labelledby="faq-q3"><div><p>Sì, offriamo supporto nutrizionale personalizzato in presenza di condizioni diagnosticate dal medico, nell'ambito delle nostre competenze professionali e sempre in affiancamento al percorso medico.</p></div></div></div>
+      <div class="faq-item"><h3><button class="faq-btn" type="button" aria-expanded="false" aria-controls="faq-4" id="faq-q4">Offrite percorsi di nutrizione sportiva?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+        <div class="faq-panel" id="faq-4" role="region" aria-labelledby="faq-q4"><div><p>Sì. Seguiamo sportivi a livello amatoriale e agonistico: tra noi, Valentina segue anche gli atleti agonisti, mentre Federico si occupa della nutrizione sportiva amatoriale.</p></div></div></div>
+      <div class="faq-item"><h3><button class="faq-btn" type="button" aria-expanded="false" aria-controls="faq-5" id="faq-q5">È necessario seguire una dieta restrittiva?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+        <div class="faq-panel" id="faq-5" role="region" aria-labelledby="faq-q5"><div><p>No. Il nostro approccio privilegia l'equilibrio e la personalizzazione, evitando restrizioni inutili: adattiamo le indicazioni alimentari alle tue esigenze individuali e cliniche.</p></div></div></div>
+      <div class="faq-item"><h3><button class="faq-btn" type="button" aria-expanded="false" aria-controls="faq-6" id="faq-q6">Come posso prenotare una consulenza?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+        <div class="faq-panel" id="faq-6" role="region" aria-labelledby="faq-q6"><div><p>Puoi scriverci attraverso il modulo nella sezione Contatti oppure sul nostro profilo Instagram Casa Brunello: ti daremo tutte le informazioni sulle disponibilità.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 CONTATTI (ivory) -->
+<section class="bg-ivory" id="contatti" aria-labelledby="contatti-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Contatti</span>
+      <h2 id="contatti-title">Il primo passo verso il tuo equilibrio.</h2>
+    </div>
+    <div class="form-card reveal">
+      <form id="contact-form" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="f-nome">Nome e cognome</label><input id="f-nome" name="nome" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-tel">Telefono <span class="opt">(facoltativo)</span></label><input id="f-tel" name="telefono" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="f-prof">Professionista di interesse</label>
+            <select id="f-prof" name="professionista"><option value="Indifferente">Indifferente</option><option value="Dott. Federico Bruno">Dott. Federico Bruno</option><option value="Dott.ssa Valentina Pisanò">Dott.ssa Valentina Pisanò</option></select></div>
+          <div class="field full"><label for="f-serv">Servizio di interesse</label>
+            <select id="f-serv" name="servizio"><option value="Prima visita">Prima visita</option><option value="Valutazione periodica">Valutazione periodica</option><option value="Valutazione bioimpedenziometrica">Valutazione bioimpedenziometrica</option><option value="Consulenza HACCP / menù ristorazione collettiva">Consulenza HACCP / menù ristorazione collettiva</option><option value="Informazioni generali">Informazioni generali</option></select></div>
+          <div class="field full"><label for="f-msg">Messaggio breve</label><textarea id="f-msg" name="messaggio" rows="3" maxlength="600" aria-describedby="f-msg-hint"></textarea><span class="hint" id="f-msg-hint">Ti chiediamo di non inserire dati sanitari: ne parleremo insieme durante la consulenza.</span></div>
+          <label class="consent"><input type="checkbox" name="consenso_privacy" required><span>Acconsento al trattamento dei miei dati personali per ricevere una risposta alla mia richiesta.</span></label>
+          <div class="form-actions"><button class="btn btn-primary" type="submit">Richiedi una consulenza</button></div>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 11 FOOTER -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <span class="brand-name">Casa Brunello</span>
+      <span class="brand-sub">Federico &amp; Valentina · Biologi nutrizionisti</span>
+      <p class="motto">Mangiare bene. Vivere meglio. Con il sorriso.</p>
+    </div>
+    <div class="footer-grid">
+      <div>
+        <h2>Contatti</h2>
+        <ul>
+          <li>Federico Bruno: <a href="tel:+390494905521">049 490 5521</a></li>
+          <li>Valentina Pisanò: <a href="tel:+390494905510">049 490 5510</a></li>
+          <li>Recapito generale: <a href="tel:+393921100950">392 110 0950</a></li>
+          <li>Instagram: <a href="https://www.instagram.com/casabrunello.nutrizionisti/" target="_blank" rel="noopener">@casabrunello.nutrizionisti</a></li>
+        </ul>
+      </div>
+      <div class="pro">
+        <h2>Dati professionali</h2>
+        <p><strong>Dott. Federico Bruno</strong><br>Biologo nutrizionista<br>Ordine dei Biologi, Sezione A<br>Matricola AA_081289</p>
+        <p><strong>Dott.ssa Valentina Pisanò</strong><br>Biologa nutrizionista<br>Ordine dei Biologi, Sezione A<br>Matricola AA_086228</p>
+      </div>
+      <div class="links">
+        <h2>Link</h2>
+        <ul class="links-cols">
+          <li><a href="#chi-siamo">Chi siamo</a></li>
+          <li><a href="#a-chi-ci-rivolgiamo">A chi ci rivolgiamo</a></li>
+          <li><a href="#approccio">Approccio</a></li>
+          <li><a href="#servizi">Servizi</a></li>
+          <li><a href="#come-funziona">Come funziona</a></li>
+          <li><a href="#dove-riceviamo">Dove riceviamo</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contatti">Contatti</a></li>
+          <!-- DA COLLEGARE quando i documenti saranno disponibili:
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="cookie-policy.html">Cookie Policy</a></li> -->
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© <span id="y">2026</span> Casa Brunello · Federico Bruno &amp; Valentina Pisanò · Biologi nutrizionisti</div>
+  </div>
+</footer>
+
+<script>
+/* Inserire qui l'URL del servizio di invio moduli (es. Formspree) quando sarà configurato. */
+var FORM_ENDPOINT = '';
+
+(function(){
+  document.body.classList.remove('no-js');
+  document.getElementById('y').textContent = new Date().getFullYear();
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Menu mobile */
+  var burger = document.querySelector('.burger'), nav = document.getElementById('nav');
+  function setMenu(open){
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Chiudi il menu' : 'Apri il menu');
+    nav.classList.toggle('open', open);
+    document.body.classList.toggle('menu-open', open);
+  }
+  burger.addEventListener('click', function(){ setMenu(burger.getAttribute('aria-expanded') !== 'true'); });
+  nav.addEventListener('click', function(e){ if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && nav.classList.contains('open')) { setMenu(false); burger.focus(); }
+  });
+  matchMedia('(min-width:1024px)').addEventListener('change', function(m){ if (m.matches) setMenu(false); });
+
+  /* FAQ */
+  document.querySelectorAll('.faq-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !open);
+      btn.closest('.faq-item').classList.toggle('open', !open);
+    });
+  });
+
+  /* Reveal */
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || reduce) {
+    els.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:.08});
+    els.forEach(function(el){ io.observe(el); });
+  }
+
+  /* Come funziona: percorso che si disegna con lo scroll */
+  var steps = document.getElementById('steps'), items = steps.querySelectorAll('.step');
+  function updateSteps(){
+    var r = steps.getBoundingClientRect(), vh = innerHeight;
+    var p = Math.max(0, Math.min(1, (vh * 0.72 - r.top) / Math.max(r.height, 1)));
+    if (reduce) p = 1;
+    steps.style.setProperty('--p', p.toFixed(3));
+    var n = items.length;
+    items.forEach(function(it, i){ it.classList.toggle('on', p >= (i / (n - 1)) - 0.02 && p > 0); });
+  }
+  var ticking = false;
+  addEventListener('scroll', function(){ if (!ticking){ ticking = true; requestAnimationFrame(function(){ updateSteps(); ticking = false; }); } }, {passive:true});
+  addEventListener('resize', updateSteps);
+  updateSteps();
+
+  /* Form contatti */
+  var form = document.getElementById('contact-form'), status = document.getElementById('form-status');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      status.textContent = 'Compila nome, email valida e consenso privacy per inviare la richiesta.';
+      var first = form.querySelector(':invalid'); if (first) first.focus();
+      return;
+    }
+    if (!FORM_ENDPOINT) {
+      status.textContent = 'Il modulo sarà attivo a breve. Nel frattempo puoi scriverci su Instagram: @casabrunello.nutrizionisti.';
+      return;
+    }
+    var btn = form.querySelector('button[type=submit]'); btn.disabled = true;
+    status.textContent = 'Invio in corso…';
+    fetch(FORM_ENDPOINT, {method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}})
+      .then(function(res){
+        if (!res.ok) throw new Error();
+        form.reset();
+        status.textContent = 'Grazie! Abbiamo ricevuto la tua richiesta e ti risponderemo il prima possibile.';
+      })
+      .catch(function(){ status.textContent = 'Si è verificato un problema con l\'invio. Riprova più tardi o scrivici su Instagram.'; })
+      .finally(function(){ btn.disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>
