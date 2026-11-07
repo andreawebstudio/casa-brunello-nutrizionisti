@@ -147,10 +147,9 @@ section{padding:clamp(72px, 10vw, 124px) 0;background:var(--section-bg)}
 @media (min-width:1024px){
   .targets{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;max-width:1080px}
   .target{padding:26px 26px 28px}
-  .target.wide{grid-column:1 / -1;flex-direction:row;align-items:center;text-align:left;gap:36px;padding:28px 36px}
-  .target.wide .t-head{flex:0 0 250px;text-align:center;padding-right:36px;border-right:1px solid var(--line)}
-  .target.wide .t-head h3{margin:0}
-  .target.wide .t-body{flex:1}
+  .target.wide{grid-column:1 / -1;flex-direction:column;align-items:center;text-align:center;padding:30px 48px 32px}
+  .target.wide .t-head{text-align:center;margin-bottom:4px}
+  .target.wide .t-body{max-width:860px}
 }
 .target{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(22px, 2.4vw, 30px) clamp(22px, 2.6vw, 34px);text-align:center;display:flex;flex-direction:column;align-items:center;transition:transform .4s var(--ease), box-shadow .4s var(--ease)}
 .target:hover{transform:translateY(-3px);box-shadow:0 1px 2px rgba(48,74,59,.05), 0 20px 40px -24px rgba(48,74,59,.28)}
