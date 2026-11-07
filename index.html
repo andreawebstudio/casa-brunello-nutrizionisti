@@ -142,7 +142,16 @@ section{padding:clamp(72px, 10vw, 124px) 0;background:var(--section-bg)}
 .profile p{font-size:.98rem;margin:0}
 
 /* ---------- A chi ci rivolgiamo ---------- */
-.targets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px, 2.4vw, 30px);max-width:900px;margin:0 auto}
+.targets{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;max-width:560px;margin:0 auto}
+.target.wide .t-head{display:flex;flex-direction:column;align-items:center}
+@media (min-width:1024px){
+  .targets{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;max-width:1080px}
+  .target{padding:26px 26px 28px}
+  .target.wide{grid-column:1 / -1;flex-direction:row;align-items:center;text-align:left;gap:36px;padding:28px 36px}
+  .target.wide .t-head{flex:0 0 250px;text-align:center;padding-right:36px;border-right:1px solid var(--line)}
+  .target.wide .t-head h3{margin:0}
+  .target.wide .t-body{flex:1}
+}
 .target{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(22px, 2.4vw, 30px) clamp(22px, 2.6vw, 34px);text-align:center;display:flex;flex-direction:column;align-items:center;transition:transform .4s var(--ease), box-shadow .4s var(--ease)}
 .target:hover{transform:translateY(-3px);box-shadow:0 1px 2px rgba(48,74,59,.05), 0 20px 40px -24px rgba(48,74,59,.28)}
 .icon{width:58px;height:58px;border-radius:50%;background:var(--ivory);border:1px solid rgba(130,141,109,.6);display:grid;place-items:center;margin-bottom:16px;position:relative}
@@ -157,14 +166,36 @@ section{padding:clamp(72px, 10vw, 124px) 0;background:var(--section-bg)}
 .approach-intro{max-width:700px;margin:0 auto clamp(48px, 6vw, 80px);text-align:center;font-size:1.125rem}
 .approach-intro p{color:rgba(48,74,59,.9)}
 .orbit{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,340px) minmax(0,1fr);grid-template-rows:auto auto;column-gap:clamp(36px, 5vw, 72px);row-gap:clamp(48px, 6vw, 88px);align-items:center;max-width:1120px;margin:0 auto}
-.orbit-center{grid-column:2;grid-row:1 / span 2;position:relative;aspect-ratio:1;display:grid;place-items:center;text-align:center}
-.orbit-center svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.orbit-center .ring{transform-origin:50% 50%;animation:spin 80s linear infinite}
-.orbit-center .core{position:relative;z-index:1;padding:0 18%}
-.orbit-center .core small{display:block;font-weight:600;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px}
-.orbit-center .core strong{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem, 1.3rem + 1.4vw, 2.5rem);line-height:1.1}
+.orbit-center{grid-column:2;grid-row:1 / span 2;position:relative;display:flex;flex-direction:column;align-items:center;text-align:center}
+.arch-art{display:block;width:100%;max-width:300px;height:auto;overflow:visible}
+.arch-art .draw{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.4s var(--ease) .15s}
+.arch-art .stem{transition-delay:.6s;transition-duration:1.8s}
+.orbit-center.in .arch-art .draw{stroke-dashoffset:0}
+.arch-art .sun{transform:translateY(54px);transition:transform 2s var(--ease) .3s}
+.orbit-center.in .arch-art .sun{transform:none}
+.arch-art .glow{transform-box:fill-box;transform-origin:center;animation:breathe 6s ease-in-out infinite}
+.arch-art .leaves path{opacity:0;transform:scale(.3);transform-box:fill-box;transform-origin:left center;transition:opacity .6s var(--ease), transform .7s var(--ease)}
+.orbit-center.in .arch-art .leaves path{opacity:1;transform:none}
+.arch-art .leaves g:nth-child(1) path{transition-delay:1s}
+.arch-art .leaves g:nth-child(2) path{transition-delay:1.2s}
+.arch-art .leaves g:nth-child(3) path{transition-delay:1.4s}
+.arch-art .leaves g:nth-child(4) path{transition-delay:1.6s}
+.arch-art .leaves g:nth-child(5) path{transition-delay:1.8s}
+.arch-art .leaves g:nth-child(6) path{transition-delay:2s}
+.arch-art .bud{opacity:0;transition:opacity .6s var(--ease) 2.3s}
+.orbit-center.in .arch-art .bud{opacity:1}
+.arch-art .seed{transform-box:fill-box;animation:float 7s ease-in-out infinite}
+.arch-art .s2{animation-delay:-2.5s;animation-duration:9s}
+.arch-art .s3{animation-delay:-4s;animation-duration:8s}
+@keyframes breathe{50%{transform:scale(1.12);opacity:.8}}
+@keyframes float{50%{transform:translateY(-9px)}}
+.no-js .arch-art .draw{stroke-dashoffset:0}
+.no-js .arch-art .sun,.no-js .arch-art .leaves path{transform:none;opacity:1}
+.no-js .arch-art .bud{opacity:1}
+.orbit-center .core{margin-top:22px}
+.orbit-center .core small{display:block;font-weight:600;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:6px}
+.orbit-center .core strong{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(1.6rem, 1.2rem + 1.1vw, 2.1rem);line-height:1.1}
 .orbit-center .core em{font-family:var(--serif);font-style:italic;color:var(--forest)}
-@keyframes spin{to{transform:rotate(360deg)}}
 .orbit-list{display:contents;list-style:none;margin:0;padding:0}
 .o-item{position:relative;max-width:360px}
 .o-item.left{grid-column:1;justify-self:end;text-align:right}
@@ -221,15 +252,18 @@ section{padding:clamp(72px, 10vw, 124px) 0;background:var(--section-bg)}
 .quote .wrap{position:relative;z-index:1}
 
 /* ---------- Dove riceviamo ---------- */
-.address{max-width:340px;margin:0 auto;text-align:center;background:var(--section-bg);border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;box-shadow:var(--shadow)}
+.sedi{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:620px;margin:0 auto}
+.address{text-align:center;background:var(--section-bg);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;box-shadow:var(--shadow)}
 .bg-white .address{background:var(--ivory)}
-.address svg{width:30px;height:30px;margin:0 auto 12px}
-.address .label{display:block;font-size:.74rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px}
-.address .value{font-family:var(--serif);font-size:1.7rem;line-height:1.2}
+.address svg{width:28px;height:28px;margin:0 auto 10px}
+.address .value{font-family:var(--serif);font-size:1.4rem;line-height:1.2;margin:0 0 12px}
+.cities{list-style:none;margin:0;padding:0;font-size:.98rem}
+.cities li{padding:6px 0;border-top:1px solid var(--line)}
+@media (max-width:560px){.sedi{grid-template-columns:1fr;max-width:340px}}
 
 /* ---------- FAQ ---------- */
-.faq{max-width:840px;margin:0 auto;border-top:1px solid var(--line)}
-.faq-item{border-bottom:1px solid var(--line)}
+.faq{max-width:840px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq-item{background:var(--ivory);border:1px solid rgba(48,74,59,.08);border-radius:14px;padding:0 22px;box-shadow:var(--shadow)}
 .faq-item h3{margin:0;font-family:var(--sans)}
 .faq-btn{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 4px;cursor:pointer;font-family:var(--sans);font-weight:600;font-size:1.08rem;color:var(--forest);line-height:1.45}
 .faq-btn:focus-visible{outline:3px solid var(--forest);outline-offset:2px;border-radius:6px}
@@ -316,7 +350,6 @@ section{padding:clamp(72px, 10vw, 124px) 0;background:var(--section-bg)}
   .step p{margin:0;max-width:none}
 }
 @media (max-width:760px){
-  .targets{grid-template-columns:1fr;grid-auto-rows:auto}
   .profiles{grid-template-columns:1fr}
   .faq-panel p{padding-right:8px}
   .footer-grid{grid-template-columns:1fr;text-align:center;gap:32px}
@@ -339,7 +372,7 @@ section{padding:clamp(72px, 10vw, 124px) 0;background:var(--section-bg)}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  *,*::before,*::after{transition-duration:.01ms !important;animation:none !important}
+  *,*::before,*::after{transition-duration:.01ms !important;transition-delay:0s !important;animation:none !important}
   .reveal,.step{opacity:1;transform:none}
   .card:hover,.target:hover{transform:none}
 }
@@ -442,24 +475,27 @@ section{padding:clamp(72px, 10vw, 124px) 0;background:var(--section-bg)}
       <article class="target reveal">
         <span class="icon" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="#304A3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 35V19"/><path d="M20 22c0-6 4-10 11-10 0 7-4 11-11 10Z" fill="#828D6D" fill-opacity=".35"/><path d="M20 19c0-5-3.5-8.5-10-8.5 0 6 3.5 9 10 8.5Z"/><path d="M13 35h14"/></svg></span>
         <h3>Adolescenti</h3>
-        <p>Percorsi alimentari pensati per accompagnare i ragazzi in una fase di crescita importante, con un'attenzione particolare all'educazione alimentare e alla costruzione di abitudini sane, serene e consapevoli.</p>
+        <p>Percorsi alimentari pensati per accompagnare i ragazzi in una fase di crescita importante, con un'attenzione particolare all'educazione alimentare e alla costruzione di abitudini sane, serene e consapevoli, compatibili con la scuola, lo sport e la vita di tutti i giorni.</p>
       </article>
       <article class="target reveal">
         <span class="icon" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="#304A3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="22" r="12"/><path d="M20 22l5-5"/><path d="M17 6h6M20 6v4"/><path d="M30.5 11.5l2-2"/><path d="M20 13a9 9 0 0 1 9 9" stroke="#828D6D" stroke-width="2"/></svg></span>
         <h3>Sportivi amatoriali e agonisti</h3>
-        <p>Percorsi alimentari per migliorare la prestazione sportiva in adulti e ragazzi che praticano sport a livello amatoriale e agonistico.</p>
-        <p class="small">Gli atleti agonisti sono seguiti dalla Dott.ssa Valentina Pisanò; il Dott. Federico Bruno segue gli sportivi a livello amatoriale.</p>
+        <p>Percorsi alimentari per migliorare la prestazione sportiva in adulti e ragazzi che praticano sport a livello amatoriale e agonistico. Gli atleti agonisti sono seguiti dalla Dott.ssa Valentina Pisanò, mentre il Dott. Federico Bruno segue gli sportivi a livello amatoriale.</p>
       </article>
       <article class="target reveal">
         <span class="icon" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="#304A3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 33c-6-4-9-8.5-9-13 0-3 2-5.5 5-5.5 1.8 0 3.2.9 4 2.3.8-1.4 2.2-2.3 4-2.3 3 0 5 2.5 5 5.5 0 4.5-3 9-9 13Z" fill="#828D6D" fill-opacity=".35"/><path d="M20 14.5c0-4 2-7 5-8.5"/><path d="M20 10c-2-2-5-2.5-7-1.5 1 2.5 4 3.5 7 1.5Z"/></svg></span>
         <h3>Donne in ogni fase della vita</h3>
-        <p>Nutrizione al femminile con percorsi dedicati a gravidanza, allattamento, PCOS e menopausa, per sostenere con equilibrio e attenzione i cambiamenti di ogni fase.</p>
+        <p>Nutrizione al femminile con percorsi dedicati alle diverse fasi della vita: gravidanza, allattamento, PCOS e menopausa. Indicazioni alimentari costruite con attenzione ai cambiamenti del corpo, per vivere ogni fase con equilibrio, serenità e benessere.</p>
       </article>
-      <article class="target reveal">
+      <article class="target wide reveal">
+        <div class="t-head">
         <span class="icon" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="#304A3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 5l12 4.5v9c0 8-5.2 13.6-12 16.5C13.2 32.1 8 26.5 8 18.5v-9L20 5Z"/><path d="M20 27v-8" /><path d="M20 21c0-4.5 3-7 7.5-7 0 4.8-3 7.3-7.5 7Z" fill="#828D6D" fill-opacity=".35"/><path d="M20 23c0-3.5-2.5-5.5-6-5.5 0 3.7 2.5 5.7 6 5.5Z"/></svg></span>
         <h3>Persone con condizioni di salute specifiche</h3>
+        </div>
+        <div class="t-body">
         <p>Percorsi nutrizionali in presenza di condizioni o patologie diagnosticate dal medico: problematiche metaboliche come obesità, diabete di tipo 2, insulino-resistenza, dislipidemie, ipertensione, steatosi epatica e iperuricemia; problematiche gastroenterologiche come sindrome dell'intestino irritabile (IBS), SIBO, reflusso gastroesofageo, gastrite, diverticolosi e diverticolite, celiachia e MICI, in fase acuta e di remissione; allergie e intolleranze alimentari.</p>
         <p class="small">Sempre in affiancamento al percorso medico, mai in sostituzione.</p>
+        </div>
       </article>
     </div>
     <div class="cta-end reveal"><a class="btn btn-primary" href="#contatti">Richiedi una consulenza</a></div>
@@ -478,11 +514,33 @@ section{padding:clamp(72px, 10vw, 124px) 0;background:var(--section-bg)}
     </div>
     <div class="orbit">
       <div class="orbit-center reveal" aria-hidden="true">
-        <svg viewBox="0 0 300 300">
-          <path fill="#EFBC86" fill-opacity=".38" d="M150 22c38 0 76 16 98 46s28 72 14 108-46 66-86 78-86 6-118-20S12 166 18 128s28-72 58-90 46-16 74-16Z"/>
-          <g class="ring"><circle cx="150" cy="150" r="140" fill="none" stroke="#828D6D" stroke-width="1" stroke-dasharray="2 9" stroke-linecap="round"/><circle cx="150" cy="10" r="5" fill="#E6AD58"/><circle cx="290" cy="150" r="3.5" fill="#828D6D"/><circle cx="10" cy="150" r="3.5" fill="#828D6D"/></g>
+        <svg class="arch-art" viewBox="0 0 300 380">
+          <defs>
+            <clipPath id="arch-clip"><path d="M24 380V156a126 126 0 0 1 252 0v224Z"/></clipPath>
+            <radialGradient id="sun-glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#E6AD58" stop-opacity=".55"/><stop offset="1" stop-color="#E6AD58" stop-opacity="0"/></radialGradient>
+          </defs>
+          <path d="M24 380V156a126 126 0 0 1 252 0v224Z" fill="#EFBC86" fill-opacity=".42"/>
+          <g clip-path="url(#arch-clip)">
+            <g class="sun"><circle class="glow" cx="150" cy="176" r="78" fill="url(#sun-glow)"/><circle cx="150" cy="176" r="31" fill="#E6AD58"/></g>
+            <path d="M0 262C60 236 120 248 160 258S250 276 300 250V380H0Z" fill="#828D6D" fill-opacity=".2"/>
+            <path d="M0 296C70 272 140 304 200 288S280 274 300 282V380H0Z" fill="#828D6D" fill-opacity=".34"/>
+          </g>
+          <path class="draw" pathLength="1" d="M40 380V160a110 110 0 0 1 220 0v220" fill="none" stroke="#828D6D" stroke-width="1.2"/>
+          <path class="draw stem" pathLength="1" d="M150 378C146 340 158 312 150 282C144 258 152 238 160 220" fill="none" stroke="#304A3B" stroke-width="1.4" stroke-linecap="round"/>
+          <g class="leaves" fill="#828D6D" stroke="#304A3B" stroke-width=".8">
+            <g transform="translate(149 348) rotate(-150)"><path d="M0 0C8-10 22-10 28 0C22 10 8 10 0 0Z"/></g>
+            <g transform="translate(151 326) rotate(-32)"><path d="M0 0C8-10 22-10 28 0C22 10 8 10 0 0Z"/></g>
+            <g transform="translate(152 302) rotate(-155)"><path d="M0 0C7-9 19-9 24 0C19 9 7 9 0 0Z"/></g>
+            <g transform="translate(150 280) rotate(-28)"><path d="M0 0C7-9 19-9 24 0C19 9 7 9 0 0Z"/></g>
+            <g transform="translate(149 258) rotate(-148)"><path d="M0 0C6-8 16-8 20 0C16 8 6 8 0 0Z"/></g>
+            <g transform="translate(155 238) rotate(-40)"><path d="M0 0C6-8 16-8 20 0C16 8 6 8 0 0Z"/></g>
+          </g>
+          <circle class="bud" cx="160" cy="218" r="4" fill="#E6AD58"/>
+          <circle class="seed s1" cx="92" cy="126" r="2.4" fill="#FFF9F1"/>
+          <circle class="seed s2" cx="214" cy="110" r="1.8" fill="#FFF9F1"/>
+          <circle class="seed s3" cx="226" cy="196" r="2.6" fill="#E6AD58" fill-opacity=".8"/>
         </svg>
-        <div class="core"><small>Al centro</small><strong>ci sei <em>tu</em></strong></div>
+        <div class="core"><small>Il nostro metodo</small><strong>Su misura, <em>per te.</em></strong></div>
       </div>
       <ul class="orbit-list">
         <li class="o-item left top reveal"><h3>Personalizzazione <svg class="leaf" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 18C4 9 9 4 18 4c0 9-5 14-14 14Z" fill="#828D6D"/><path d="M4 18L13 9" stroke="#304A3B" stroke-width="1.2" stroke-linecap="round"/></svg></h3><p>Ogni percorso nasce dalla valutazione delle esigenze individuali, degli obiettivi e delle abitudini alimentari.</p></li>
@@ -581,10 +639,27 @@ section{padding:clamp(72px, 10vw, 124px) 0;background:var(--section-bg)}
       <span class="eyebrow">Dove riceviamo</span>
       <h2 id="dove-title">Ti accompagniamo verso il tuo equilibrio.</h2>
     </div>
-    <div class="address reveal">
-      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#304A3B" stroke-width="1.4"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5" fill="#828D6D" stroke="none"/></svg>
-      <span class="label">Indirizzo</span>
-      <span class="value">In arrivo</span>
+    <div class="sedi">
+      <div class="address reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#304A3B" stroke-width="1.4"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5" fill="#828D6D" stroke="none"/></svg>
+        <h3 class="value">Padova e provincia</h3>
+        <ul class="cities">
+          <li>Abano Terme (PD)</li>
+          <li>Camin (PD)</li>
+          <li>Monselice (PD)</li>
+          <li>Padova Voltabarozzo (PD)</li>
+          <li>Piove di Sacco (PD)</li>
+          <li>Vigonza (PD)</li>
+        </ul>
+      </div>
+      <div class="address reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#304A3B" stroke-width="1.4"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5" fill="#828D6D" stroke="none"/></svg>
+        <h3 class="value">Treviso e provincia</h3>
+        <ul class="cities">
+          <li>Treviso</li>
+          <li>Castelfranco Veneto (TV)</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
